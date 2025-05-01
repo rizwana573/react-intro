@@ -1,0 +1,33 @@
+{
+  "name": "intro",
+  "version": "1.0.0",
+  "description": "This is my first react app by Rizwana Begum",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizwana573/react-intro.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Rizwana Begum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rizwana573/react-intro/issues"
+  },
+  "homepage": "https://github.com/rizwana573/react-intro#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }, 
+  "browserslist":[
+    "last 2 versions"
+  ]
+}
