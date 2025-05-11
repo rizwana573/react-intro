@@ -2,8 +2,9 @@
   "name": "intro",
   "version": "1.0.0",
   "description": "This is my first react app by Rizwana Begum",
-  "main": "App.js",
   "scripts": {
+    "start":"parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {

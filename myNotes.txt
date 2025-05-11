@@ -1,0 +1,40 @@
+
+CHAPTER :3
+1. JSX - JS xml allows you to write HTML inside react and place them in the DOM w/o createElement or appendChild methods
+
+2. React.createElement vs JSX: React.createElement is very verbose and difficult to write especially with nested elements. JSX is easy and modular as the syntax is more closer to HTML. We can easily achieve component composition, add elements inside components and viceversa.
+
+3. Benefites of JSX: easy to code and makes code more readable. We can easily achieve component composition, add elements inside components and viceversa.
+
+4. Babel and Parcel roles: Babel is JS transpiler/compiler which converts JSX into machine readable code. Parcel is a bundler which bundles all ur application/code, tc of minification, image optimization, builds ur code and gives u live server.
+
+5. Component: Components are like functions which return html elements. These are independent and reusable bits of codes. components can be created in two ways: class components and functional components. 
+
+6. Functional components are basic JS functions which return a HTML element. The name starts with Capital letter. 
+
+7. type attribute signifies how a browser can treat the code inside the js file. We have text/plain, text/javascript, type/babel, type/jsx and module. If we are dealing with import and export of variables or components, type module should be used. text/plain makes the code as a plain text and text/javascript makes it js code. U can also add any custom name like type/riz but the browser will skip the script.
+
+8. {TitleComponent} vs {<TitleComponent/>} vs
+{<TitleComponent></TitleComponent>} in JSX:
+These 3 represent the same thing. 
+{TitleComponent} : The value describes TitleComponent as a variable.
+<TitleComponent/> : This indicates a functional component which is basically returning some JSX value. We can use this if there are no child ele.
+<TitleComponent></TitleComponent>: Used when we need a child ele inside the component. 
+
+Episode 4:
+● Is JSX mandatory for React? - No.SX is syntactic sugar for React.createElement(). While not mandatory, it makes code more readable and expressive.
+● Is ES6 mandatory for React?- No. ES6 is not mandatory, but it is commonly used in React due to features like arrow functions, classes, destructuring, and let/const which simplify code and align with modern React development patterns.
+● {TitleComponent} vs {<TitleComponent/>} vs
+{<TitleComponent></TitleComponent>} in JSX - 1st is just a reference, 2nd renders a component, and 3rd is equivalent JSX when passing children.
+● How can I write comments in JSX? In JSX, use {/* comment */} syntax for all comments. // and /* */ outside JSX is fine (in JS blocks).
+● What is <React.Fragment></React.Fragment> and <></> ? Both are used to wrap multiple JSX elements without adding extra nodes to the DOM. <>...</> is the shorthand for <React.Fragment>...</React.Fragment>.
+● What is Virtual DOM? The Virtual DOM is an in-memory representation of the real DOM. React uses it to optimize UI updates by only updating the parts of the actual DOM where changes have occurred.
+● What is Reconciliation in React? Reconciliation is the process by which React updates the DOM efficiently by comparing the current Virtual DOM with the previous one and applying only the necessary changes to the real DOM.
+● What is React Fiber? React Fiber is the reimplementation of React’s core algorithm. It enables incremental rendering of the virtual DOM, supports concurrency, and improves scheduling for UI rendering.
+● Why we need keys in React? When do we need keys in React? Keys help React identify which items have changed, been added, or removed. They improve performance and prevent bugs during re-rendering of lists. 
+● Can we use index as keys in React? Yes, we can use if list is going to be static, and there is no requirement of sorting/filter. But when any of these is required, it is not a best practise to use index as key, as react gets confused while rendering new ele or sorting. 
+● What is props in React? Props are shorthand for properties, and are used to pass data from parent to child components. These are just like arguments being passed to the function. They are read-only and enable component reusability.
+● What is a Config Driven UI ? A config-driven UI is one where the structure and behavior of the UI are determined by configuration data, often received from APIs. It allows for dynamic rendering of components based on user roles, location, or feature flags. Example: Food delivery apps UI and data vary based on cities. 
+
+
+

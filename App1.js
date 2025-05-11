@@ -1,29 +1,52 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const Header = () => {
-    return (
-        <div id="headerContainer">
-            <div id="logoContainer"><img src="https://tse2.mm.bing.net/th?id=OIP.dL0Knl1A8Uq72s54mTbXcAHaHa&pid=Api&P=0&h=180"/></div>
-            <input id="searchBar" type="search"></input>
-            <div id="navBar">
-                <ul>
-                    <li><a href="#" target="_blank">Home</a></li>
-                    <li><a href="#" target="_blank">About us</a></li>
-                    <li><a href="#" target="_blank">Cart</a></li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-const Footer = () => {
-    return (
-        <div id="copyrightText">
-            &copy; 2025. All Rights Reserved.
-        </div>
-    )
-}
-const prodData=[
+// const reactEle = React.createElement("h1", {id:"heading", class:"title"}, 
+//     React.createElement("a",{id:"clickMe", target:"_blank", href:"#"}, "I am an anchor"));
+
+// const head1 = React.createElement("div", {className:"title"}, 
+//       [ React.createElement("h1", {className:"child1"}, "inside h1"),
+//         React.createElement("h2", {className:"child2"}, "inside h2"),
+//         React.createElement("h3", {className:"child3"}, "inside h3"),
+//       ]
+// )
+
+// const Head2 = () => {
+//     return(
+//     //head1();
+//    <div className="title">
+//     {head1}
+//     <h1 className="child1">inside h1 comp</h1>
+//     <h2 className="child2">inside h2 comp</h2>
+//     <h3 className="child3">inside h3 comp</h3>
+//    </div>
+//    )
+// }
+
+//     // JSX is transpiled to browser understandable code by Parcel - Babel(JS Compiler) Package
+//     // BTScenes, JSX => React.creatElement => JS object => HTML
+//     const jsxHeading = (<h1 className="heading"><a className="clickMe" href="#">click me!!</a></h1>)
+
+//     const root = ReactDOM.createRoot(document.getElementById("root"));
+
+//     const AnchorComp = () =>  <a className="anchor" href="#">Click on anchor Component</a>
+//     const HeadingCom = () => {
+//     return  <div id="container"><AnchorComp /> <h1 className="heading">This is a functional component</h1></div> 
+//     };
+//     root.render(<Head2/>);
+
+/*async function fetchData() {
+    const response = await fetch('https://dummyjson.com/products');
+    const data = await response.json();
+    return data;
+  }
+  let prodData;
+  fetchData().then(result=>{
+    prodData=result;
+    console.log("here ", prodData); 
+  });*/
+
+  const prodData=[
     {
     "id": 1,
     "title": "Essence Mascara Lash Princess",
@@ -1457,37 +1480,73 @@ const prodData=[
     "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/kiwi/thumbnail.webp"
     }
   ]
-const ProdCard = ({prodDetails}) => {
+
+const Header = () => {
     return (
-        <div className="cardOuterWrap">
-           <img alt="" className="prodImage" src={prodDetails.images}></img>
-           <div className="prodDeets">
-            <div className="prodTitle">{prodDetails.title}</div>
-            <div className="prodCategory">{prodDetails.category}</div>
-            <div className="prodRating">{prodDetails.rating}</div>
-            <div className="prodPrice">{prodDetails.price}</div>
-           </div>
+        <div id="headerContainer">
+        <div className="logoContainer">
+            <img className="logo" alt="logo image" src="https://i.pinimg.com/originals/3d/a0/00/3da000e71ddc31ec29da41266b182ade.jpg"></img>
+        </div>
+        <div className="navBar">
+            <ul>
+                <li><a className="navLinks" href="#">Home</a></li>
+                <li><a className="navLinks" href="#">About Us</a></li>
+                <li><a className="navLinks" href="#">Cart</a></li>
+            </ul>
+        </div>
         </div>
     )
 }
-const AppBody = () => {
+const RestrauComp = ({prodDetails}) => {
+    //const props = {prodDetails};
+    //console.log("props ",props);
     return (
-      <div id="cardsContainer">
-          {(
-            prodData.map(products=> <ProdCard key={products.id} prodDetails={products}/>)
-         )}
-      </div>  
+        <div className="cardOuter">
+            <img alt="resLogo" src={prodDetails.images}></img>
+            <div className="detailsWrapper">
+                <h2 className="restrauName">{prodDetails.title}</h2>
+                <h3 className="cuisine">{prodDetails.category}</h3>
+                <h4 className="rating">{prodDetails.rating}</h4>
+                <h4 className="price">{prodDetails.price}</h4>
+            </div>
+        </div>
     )
 }
-
+const RestrauBody = () => {
+    return (
+        <div id="restrauBody">
+            <div id="searchBar"><input type="search"></input></div>
+            <div id="cardsContainer">
+                { prodData.map(product => {
+                  return  <RestrauComp key={product.id} prodDetails={product}/>  
+                } )}
+                {/* <RestrauComp/>
+                <RestrauComp/>
+                <RestrauComp/>
+                <RestrauComp/>
+                <RestrauComp/>
+                <RestrauComp/>
+                <RestrauComp/>
+                <RestrauComp/> */}
+            </div>
+        </div>
+    )
+}
+const Footer = () => {
+    return (
+        <div id="copyright">
+            &copy; 2025 All rights reserved. 
+        </div>
+    )
+}
 const AppLayout = () => {
     return (
-        <div id="appLayout">
-<Header />
-<AppBody/>
-{Footer()}
+        <div className="appLayout">
+            <Header />
+            <RestrauBody />
+            {Footer()}
         </div>
     )
 }
 const root= ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
+root.render(<AppLayout />);
