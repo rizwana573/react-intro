@@ -1,28 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-    return (
-        <div id="headerContainer">
-            <div id="logoContainer"><img src="https://tse2.mm.bing.net/th?id=OIP.dL0Knl1A8Uq72s54mTbXcAHaHa&pid=Api&P=0&h=180"/></div>
-            <input id="searchBar" type="search"></input>
-            <div id="navBar">
-                <ul>
-                    <li><a href="#" target="_blank">Home</a></li>
-                    <li><a href="#" target="_blank">About us</a></li>
-                    <li><a href="#" target="_blank">Cart</a></li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-const Footer = () => {
-    return (
-        <div id="copyrightText">
-            &copy; 2025. All Rights Reserved.
-        </div>
-    )
-}
 const prodData=[
     {
     "id": 1,
@@ -1457,37 +1432,4 @@ const prodData=[
     "thumbnail": "https://cdn.dummyjson.com/product-images/groceries/kiwi/thumbnail.webp"
     }
   ]
-const ProdCard = ({prodDetails}) => {
-    return (
-        <div className="cardOuterWrap">
-           <img alt="" className="prodImage" src={prodDetails.images}></img>
-           <div className="prodDeets">
-            <div className="prodTitle">{prodDetails.title}</div>
-            <div className="prodCategory">{prodDetails.category}</div>
-            <div className="prodRating">{prodDetails.rating}</div>
-            <div className="prodPrice">{prodDetails.price}</div>
-           </div>
-        </div>
-    )
-}
-const AppBody = () => {
-    return (
-      <div id="cardsContainer">
-          {(
-            prodData.map(products=> <ProdCard key={products.id} prodDetails={products}/>)
-         )}
-      </div>  
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <div id="appLayout">
-<Header />
-<AppBody/>
-{Footer()}
-        </div>
-    )
-}
-const root= ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
+  export default prodData;

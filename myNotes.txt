@@ -21,6 +21,8 @@ These 3 represent the same thing.
 <TitleComponent/> : This indicates a functional component which is basically returning some JSX value. We can use this if there are no child ele.
 <TitleComponent></TitleComponent>: Used when we need a child ele inside the component. 
 
+===============================================================================================================
+
 Episode 4:
 ● Is JSX mandatory for React? - No.SX is syntactic sugar for React.createElement(). While not mandatory, it makes code more readable and expressive.
 ● Is ES6 mandatory for React?- No. ES6 is not mandatory, but it is commonly used in React due to features like arrow functions, classes, destructuring, and let/const which simplify code and align with modern React development patterns.
@@ -36,5 +38,10 @@ Episode 4:
 ● What is props in React? Props are shorthand for properties, and are used to pass data from parent to child components. These are just like arguments being passed to the function. They are read-only and enable component reusability.
 ● What is a Config Driven UI ? A config-driven UI is one where the structure and behavior of the UI are determined by configuration data, often received from APIs. It allows for dynamic rendering of components based on user roles, location, or feature flags. Example: Food delivery apps UI and data vary based on cities. 
 
+=======================================================================================================
 
-
+Episode 5:
+● What is the difference between Named Export, Default export and * as export? Named export is exporting a variable or function individually by prefix export keyword in the initialization. default export is exporting the variable or function using the export default keyword at the end of the code. There can be only one default export and multiple named exports from a file. * as syntax is used when importing, not when exporting — it means “import all exported members as an object."
+● What is the importance of config.js file?  is commonly used to store environment-independent, hardcoded configuration such as constants, image URLs, base API URLs, or feature flags. This promotes reusability and makes the code cleaner and more maintainable.
+● What are React Hooks? React Hooks are built-in functions introduced in React 16.8 that let functional components manage state and lifecycle features, which were previously available only in class components. Common hooks include useState, useEffect, useContext, and more. 
+● Why do we need a useState Hook? The useState hook is used to create and manage state in functional components. When the state changes using the setter function returned by useState, React automatically re-renders the component to reflect the updated data in the UI.
